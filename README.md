@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/infiniflow/infinity/releases/latest">
+    <a href="https://github.com/infiniflow/ragflow/releases/latest">
         <img src="https://img.shields.io/github/v/release/infiniflow/ragflow?color=blue&label=Latest%20Release" alt="Latest Release">
     </a>
     <a href="https://demo.ragflow.io" target="_blank">
@@ -84,7 +84,13 @@
 
 ### 🚀 Start up the server
 
-1. Ensure `vm.max_map_count` >= 262144 ([more](./docs/max_map_count.md)):
+1. Additional Requirements
+Additional dependencies need to be installed on the server to ensure proper functionality:
+   1. [Docker](https://docs.docker.com/engine/install/) - Docker is essential for containerizing applications and ensuring they run in an isolated and consistent environment across different development and production platforms.
+   2. [NodeJS + NVM + NPM](https://nodejs.org/en/download/package-manager) - NodeJS is necessary for running JavaScript server-side. NVM (Node Version Manager) allows you to manage multiple installations of Node.js, which is particularly useful for testing applications across different versions. NPM (Node Package Manager) is used for managing JavaScript packages.
+   3. [PNPM](https://pnpm.io/installation) - PNPM is an efficient and fast package manager for JavaScript that helps reduce the amount of space required on disk compared to traditional package managers by sharing packages between projects.
+
+2. Ensure `vm.max_map_count` >= 262144 ([more](./docs/max_map_count.md)):
 
    > To check the value of `vm.max_map_count`:
    >
@@ -105,13 +111,13 @@
    > vm.max_map_count=262144
    > ```
 
-2. Clone the repo:
+3. Clone the repo:
 
    ```bash
    $ git clone https://github.com/infiniflow/ragflow.git
    ```
 
-3. Build the pre-built Docker images and start up the server:
+4. Build the pre-built Docker images and start up the server:
 
    ```bash
    $ cd ragflow/docker
@@ -121,7 +127,7 @@
 
    > The core image is about 9 GB in size and may take a while to load.
 
-4. Check the server status after having the server up and running:
+5. Check the server status after having the server up and running:
 
    ```bash
    $ docker logs -f ragflow-server
@@ -144,9 +150,9 @@
    ```
    > If you skip this confirmation step and directly log in to RAGFlow, your browser may prompt a `network anomaly` error because, at that moment, your RAGFlow may not be fully initialized.  
 
-5. In your web browser, enter the IP address of your server and log in to RAGFlow.
+6. In your web browser, enter the IP address of your server and log in to RAGFlow.
    > With default settings, you only need to enter `http://IP_OF_YOUR_MACHINE` (**sans** port number) as the default HTTP serving port `80` can be omitted when using the default configurations.
-6. In [service_conf.yaml](./docker/service_conf.yaml), select the desired LLM factory in `user_default_llm` and update the `API_KEY` field with the corresponding API key.
+7. In [service_conf.yaml](./docker/service_conf.yaml), select the desired LLM factory in `user_default_llm` and update the `API_KEY` field with the corresponding API key.
 
    > See [./docs/llm_api_key_setup.md](./docs/llm_api_key_setup.md) for more information.
 

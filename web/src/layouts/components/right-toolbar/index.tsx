@@ -10,7 +10,7 @@ import { LanguageList } from '@/constants/common';
 import { useChangeLanguage } from '@/hooks/logicHooks';
 import styled from './index.less';
 
-const Circle = ({ children, ...restProps }: React.PropsWithChildren) => {
+export const Circle = ({ children, ...restProps }: React.PropsWithChildren) => {
   return (
     <div {...restProps} className={styled.circle}>
       {children}
@@ -40,17 +40,9 @@ const RightToolBar = () => {
   return (
     <div className={styled.toolbarWrapper}>
       <Space wrap size={16}>
-        <Circle>
-          <GithubOutlined onClick={handleGithubCLick} />
-        </Circle>
         <Dropdown menu={{ items, onClick: handleItemClick }} placement="bottom">
-          <Circle>
-            <TranslationIcon />
-          </Circle>
+          <Circle>🗪</Circle>
         </Dropdown>
-        {/* <Circle>
-          <MonIcon />
-        </Circle> */}
         <User></User>
       </Space>
     </div>

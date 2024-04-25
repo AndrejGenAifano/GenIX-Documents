@@ -56,8 +56,8 @@ const RagHeader = () => {
       }}
     >
       <Space size={12} onClick={handleLogoClick} className={styles.logoWrapper}>
-        <Logo className={styles.appIcon}></Logo>
-        <span className={styles.appName}>RAGFlow</span>
+        <img src="/favicon.ico" className={styles.appIcon} />
+        <span className={styles.appName}>GenIX Documents</span>
       </Space>
       <Space size={[0, 8]} wrap>
         <Radio.Group
